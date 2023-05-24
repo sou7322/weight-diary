@@ -4,15 +4,18 @@ import 'package:src/constants/my_colors.dart';
 class ContainerDefault extends StatelessWidget {
   final Widget child;
 
-  const ContainerDefault(this.child, {super.key});
+  const ContainerDefault({
+    super.key,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
           colors: [
             MyColors.turquoise,
             MyColors.pistachioGreen,
@@ -21,7 +24,7 @@ class ContainerDefault extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
-        vertical: 60,
+        vertical: 30,
       ),
       child: child,
     );
