@@ -9,11 +9,11 @@ class NavigationBarDefault extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'ホーム',
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.today),
-          label: 'カレンダー',
+          label: 'Calendar',
         ),
       ],
     );
