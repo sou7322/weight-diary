@@ -15,6 +15,7 @@ class NavigationBarDefault extends StatelessWidget {
           icon: Icon(Icons.today),
           label: 'Calendar',
         ),
+        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
       ],
     );
   }
