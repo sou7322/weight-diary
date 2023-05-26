@@ -3,8 +3,12 @@ import 'package:intl/intl.dart';
 
 import 'package:src/components/container_default.dart';
 import 'package:src/components/date_selector.dart';
+import 'package:src/components/weight_display.dart';
 import 'package:src/constants/my_colors.dart';
 import 'package:src/components/navigation_bar_default.dart';
+
+import 'package:src/models/weight_record.dart';
+import 'package:src/mocks/records.dart';
 
 final today = DateUtils.dateOnly(DateTime.now());
 const dateFormat = 'yyyy年M月d日';
@@ -20,6 +24,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String? currentDate;
+  WeightRecord? currentRecord;
 
   static final _dateFormatter = DateFormat(dateFormat);
 
@@ -29,6 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
     setState(() {
       currentDate = date;
+
+      final mock = MockRecords.weight_records;
+      final index = mock.length - 1;
+      currentRecord = mock[index];
     });
 
     super.initState();
@@ -75,13 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
-                '50kg',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 100,
-                ),
-              ),
+              WeightDisplay(currentRecord!),
               const SizedBox(height: 30),
               TextButton(
                 onPressed: () {},
