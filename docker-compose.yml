@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  json-server:
+    build:
+      context: .
+    tty: true
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data
+    ports:
+      - 3000:3000
+
