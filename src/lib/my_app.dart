@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:src/components/container_default.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -12,14 +13,16 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return PageView(
-      scrollDirection: Axis.vertical,
-      controller: _pageController,
-      children: const <Widget>[
-        Center(child: Text('Top')),
-        Center(child: Text('Middle')),
-        Center(child: Text('Bottom')),
-      ],
+    return ContainerDefault(
+      child: PageView(
+        scrollDirection: Axis.vertical,
+        controller: _pageController,
+        children: const <Widget>[
+          Center(child: Text('Top')),
+          Center(child: Text('Middle')),
+          Center(child: Text('Settings')),
+        ],
+      ),
     );
   }
 }
