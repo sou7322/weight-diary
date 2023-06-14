@@ -1,4 +1,12 @@
 {
+  "user": [
+    {
+      "id": "110ec58a-a0f2-4ac4-8393-c866d813b8d1",
+      "height": 160,
+      "name": "John Doe",
+      "targetWeight": 48
+    }
+  ],
   "weightRecord": [
     {
       "id": 1,
