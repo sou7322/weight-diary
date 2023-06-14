@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:src/features/monthly_average_screen.dart';
 import 'package:src/components/container_default.dart';
+import 'package:src/features/settings_screen.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -22,7 +23,7 @@ class _MyAppState extends State<MyApp> {
         children: const <Widget>[
           Center(child: Text('Top')),
           Center(child: MonthlyAverageScreen()),
-          Center(child: Text('Settings')),
+          SettingsScreen(),
         ],
       ),
     );
