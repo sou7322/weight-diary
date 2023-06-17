@@ -1,12 +1,16 @@
-import 'package:uuid/uuid.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-const uuid = Uuid();
+part 'user.freezed.dart';
+part 'user.g.dart';
 
-class User {
-  String id;
-  final double height;
-  final String name;
-  final double targetWeight;
+@freezed
+class User with _$User {
+  const factory User({
+    required String id,
+    required double height,
+    required String name,
+    required double targetWeight,
+  }) = _User;
 
-  User(this.height, this.name, this.targetWeight) : id = uuid.v4();
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
